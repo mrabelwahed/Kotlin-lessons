@@ -1,4 +1,6 @@
 sudo: required
+[![Build Status](https://travis-ci.org/mrabelwahed/Kotlin-lessons.svg?branch=master)](https://travis-ci.org/mrabelwahed/Kotlin-lessons)
+
 
 language: android
 jdk: oraclejdk8
