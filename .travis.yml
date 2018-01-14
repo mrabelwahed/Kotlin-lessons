@@ -1,0 +1,7 @@
+language: android
+android:
+components:
+#building tool version for this project
+-build-toola-26.0.2
+#android sdk version to compile app
+-android-26
