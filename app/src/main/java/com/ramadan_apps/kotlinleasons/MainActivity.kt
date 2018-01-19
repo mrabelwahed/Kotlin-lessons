@@ -2,6 +2,8 @@ package com.ramadan_apps.kotlinleasons
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
+import java.math.BigDecimal
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,6 +20,8 @@ class MainActivity : AppCompatActivity() {
 
     val emptyArr = arrayOf<String>()
     val emptyMap = mapOf<String,Float>()
+
+    val numbers = listOf(40,20,200)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,11 +40,43 @@ class MainActivity : AppCompatActivity() {
         println("fitstItem of Map"+map["key1"])
         println(greet("Mahmoud","Monday"))
 
+        //test variable length arguments
+
+        Log.d("t1",""+sumOf(1,2,3,20))
+
+       val afterPNum = numbers.map { 10 *  it }
+
+        println("numbers after map >>"+afterPNum.sorted())
+
+        Log.e("result",area(10,30).toString())
+
+        //dealing with classes
+        var myShape = Shape()
+        myShape.numberOfSides = 5
+        var shapeSides = myShape.simpleDescription()
+
+        Log.e("sides",shapeSides);
+
+        var square = Square(BigDecimal(5.2),"square")
+        square.area()
+        Log.d("square",square.simpleDesc())
+
     }
 
     private  fun greet(name:String , day:String):String{
         return "Hello $name ,day is $day"
     }
+
+
+    private fun sumOf(vararg numbers:Int):Int{
+        var sum=0;
+        for (number in numbers){
+          sum+=number
+        }
+        return sum
+    }
+
+    fun area(width:Int , height:Int) = width * height
 
 
 
